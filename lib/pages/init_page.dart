@@ -12,8 +12,8 @@ class InitPage extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: height * 0.47,
-            decoration: BoxDecoration(
+            height: height * 0.52,
+            decoration: const BoxDecoration(
               color: Colors.white10,
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(42.0),
@@ -34,7 +34,7 @@ class InitPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          "Hi Elvis",
+                          "Hi Elvis,",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -158,6 +158,42 @@ class InitPage extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ),
+          // const SizedBox(
+          //   height: 20.0,
+          // ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Hot places",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Color(0xff2E3033),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "SEE ALL",
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        color: Color(0xff3681D8),
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+
+
+
+
+              ],
             ),
           ),
         ],
