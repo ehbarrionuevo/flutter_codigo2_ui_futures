@@ -46,7 +46,45 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-
+   Future<List<Map<String, dynamic>>> getDataSuperheroe() async{
+     return Future.delayed(const Duration(seconds: 7), (){
+       return [
+         {
+           "name": "Molecule Man",
+           "age": 29,
+           "secretIdentity": "Dan Jukes",
+           "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+         },
+         {
+           "name": "Madame Uppercut",
+           "age": 39,
+           "secretIdentity": "Jane Wilson",
+           "powers": [
+             "Million tonne punch",
+             "Damage resistance",
+             "Superhuman reflexes"
+           ]
+         },
+         {
+           "name": "Flash",
+           "age": 22,
+           "secretIdentity": "Barry Allen",
+           "powers": [
+             "Super fast ",
+           ]
+         },
+         {
+           "name": "Superman",
+           "age": 30,
+           "secretIdentity": "Clark Kent",
+           "powers": [
+             "Super fast",
+             "Fly"
+           ]
+         },
+       ];
+     });
+  }
 
 
 
@@ -70,19 +108,29 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: FutureBuilder(
-        future: getData(),
+        future: getDataSuperheroe(),
         builder: (BuildContext context, AsyncSnapshot snapshot){
           // print(snapshot.hasData);
           // print(snapshot.connectionState);
           // print(snapshot.data);
 
           if(snapshot.hasData){
-            List<String> _names = snapshot.data;
+            List<Map<String, dynamic>> _superheroes = snapshot.data;
             return ListView.builder(
-              itemCount: _names.length,
+              itemCount: _superheroes.length,
               itemBuilder: (BuildContext context, int index){
-                return ListTile(
-                  title: Text(_names[index]),
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 6.0, horizontal: 12.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.black.withOpacity(0.24)
+                    ),
+                  ),
+                  child: ListTile(
+                    title: Text(_superheroes[index]["name"]),
+                    subtitle: Text(_superheroes[index]["secretIdentity"]),
+                  ),
                 );
               },
             );
