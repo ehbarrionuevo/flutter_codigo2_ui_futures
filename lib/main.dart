@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "UI - Future",
       theme: ThemeData(
-        textTheme: GoogleFonts.manropeTextTheme(),
+        textTheme: GoogleFonts.openSansTextTheme(),
       ),
       home: InitPage(),
     );

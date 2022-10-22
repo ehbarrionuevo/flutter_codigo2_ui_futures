@@ -49,7 +49,32 @@ class InitPage extends StatelessWidget {
                             fontSize: 22.0,
                           ),
                         ),
-                        TextField(),
+                        const SizedBox(
+                          height: 16.0,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 14.0),
+                            hintText: "Where aye you going?",
+                            hintStyle: TextStyle(
+                                color: Colors.white.withOpacity(0.90),
+                                fontSize: 14.0),
+                            filled: true,
+                            fillColor: Colors.white.withOpacity(0.44),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: Colors.white.withOpacity(0.85),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                              borderSide: BorderSide.none,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                              borderSide: BorderSide.none,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
