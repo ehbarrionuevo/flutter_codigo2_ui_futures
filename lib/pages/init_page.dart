@@ -1,3 +1,4 @@
+import 'package:codigo2_ui_future/widgets/item_category_widget.dart';
 import 'package:codigo2_ui_future/widgets/item_slider_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -237,35 +238,18 @@ class InitPage extends StatelessWidget {
                     height: 14.0,
                   ),
 
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 14.0, vertical: 14.0),
-                        decoration: BoxDecoration(
-                          color: Color(0xff5D6DFF),
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.ac_unit_outlined,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 6.0,
-                            ),
-                            Text(
-                              "Art & Cultures",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.0
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: const BouncingScrollPhysics(),
+                    child: Row(
+                      children: [
+                        ItemCategoryWidget(),
+                        ItemCategoryWidget(),
+                        ItemCategoryWidget(),
+                        ItemCategoryWidget(),
+                        ItemCategoryWidget(),
+                      ],
+                    ),
                   ),
 
                   // SizedBox(
