@@ -83,10 +83,16 @@ class InitPage extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0,
-                        vertical: 10.0,
+                        horizontal: 20.0,
+                        vertical: 18.0,
                       ),
-                      color: Colors.white.withOpacity(0.66),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.68),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(14.0),
+                          bottomRight: Radius.circular(42.0),
+                        ),
+                      ),
                       child: Row(
                         children: [
                           Expanded(
@@ -98,7 +104,7 @@ class InitPage extends StatelessWidget {
                                   "Santorini, Greece",
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 18.0,
+                                    fontSize: 20.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -117,28 +123,31 @@ class InitPage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Row(
-                                children: [
-                                  Icon(
+                                children: List.generate(
+                                  5,
+                                  (index) => const Icon(
                                     Icons.star,
+                                    color: Color(0xffFEAA36),
+                                    size: 22.0,
                                   ),
-                                  Icon(
-                                    Icons.star,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                  ),
-                                  Icon(
-                                    Icons.star,
-                                  ),
-                                ],
+                                ),
                               ),
                               Row(
                                 children: [
-                                  Text("4.3"),
-                                  Text("(23232 reviews)"),
+                                  Text(
+                                    "4.3",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    " (2323 reviews)",
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ],
