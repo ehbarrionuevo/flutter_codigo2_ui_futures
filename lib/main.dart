@@ -1,6 +1,7 @@
 
 import 'package:codigo2_ui_future/pages/home_page.dart';
 import 'package:codigo2_ui_future/pages/init_page.dart';
+import 'package:codigo2_ui_future/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: MyCustomScrollBehavior(),
       title: "UI - Future",
       theme: ThemeData(
         textTheme: GoogleFonts.openSansTextTheme(),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ItemSliderWidget extends StatelessWidget {
@@ -6,9 +5,13 @@ class ItemSliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       height: 140,
       width: 210,
+      margin: const EdgeInsets.only(
+        right: 12.0,
+        bottom: 10.0
+      ),
       decoration: BoxDecoration(
         color: Colors.black12,
         borderRadius: BorderRadius.circular(12.0),
@@ -16,8 +19,7 @@ class ItemSliderWidget extends StatelessWidget {
           BoxShadow(
               color: Color(0xff34383F).withOpacity(0.12),
               blurRadius: 12,
-              offset: const Offset(0, 4)
-          ),
+              offset: const Offset(0, 4)),
         ],
         image: DecorationImage(
           image: NetworkImage(
