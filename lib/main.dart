@@ -1,4 +1,5 @@
 
+import 'package:codigo2_ui_future/pages/detail_page.dart';
 import 'package:codigo2_ui_future/pages/home_page.dart';
 import 'package:codigo2_ui_future/pages/init_page.dart';
 import 'package:codigo2_ui_future/utils.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.openSansTextTheme(),
       ),
-      home: InitPage(),
+      home: DetailPage(),
     );
   }
 }
