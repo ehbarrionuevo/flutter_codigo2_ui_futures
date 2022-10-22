@@ -16,7 +16,7 @@ class DetailPage extends StatelessWidget {
           Container(
             height: height * 0.56,
             decoration: BoxDecoration(
-              color: Colors.indigo,
+              color: Colors.black12,
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(42.0),
               ),
@@ -43,8 +43,24 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-
+                    Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text("Lorem ipsum asdsa",),
+                            Row(
+                              children: [
+                                Icon(Icons.location_on,),
+                                Text("Santorino, Greece",),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Icon(Icons.favorite_border,),
+                      ],
+                    ),
                   ],
                 ),
 
