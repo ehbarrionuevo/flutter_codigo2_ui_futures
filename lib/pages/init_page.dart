@@ -33,7 +33,7 @@ class InitPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Hi Elvis",
                           style: TextStyle(
                             color: Colors.white,
@@ -41,7 +41,7 @@ class InitPage extends StatelessWidget {
                             fontSize: 22.0,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "Where do you want to go?",
                           style: TextStyle(
                             color: Colors.white,
@@ -76,6 +76,44 @@ class InitPage extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      color: Colors.red,
+                      child: Row(
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text("Santorini, Greece",),
+                              Text("Recommendation",),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.star,),
+                                  Icon(Icons.star,),
+                                  Icon(Icons.star,),
+                                  Icon(Icons.star,),
+                                  Icon(Icons.star,),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text("4.3"),
+                                  Text("(23232 reviews)"),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
