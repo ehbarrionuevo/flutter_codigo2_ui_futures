@@ -212,20 +212,74 @@ class InitPage extends StatelessWidget {
                   const SizedBox(
                     height: 14.0,
                   ),
-
-                  SizedBox(
-                    height: 140,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                      ],
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Categories",
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          color: Color(0xff2E3033),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "SEE ALL",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          color: Color(0xff3681D8),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 14.0,
                   ),
 
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 14.0, vertical: 14.0),
+                        decoration: BoxDecoration(
+                          color: Color(0xff5D6DFF),
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.ac_unit_outlined,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              width: 6.0,
+                            ),
+                            Text(
+                              "Art & Cultures",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14.0
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  // SizedBox(
+                  //   height: 140,
+                  //   child: ListView(
+                  //     scrollDirection: Axis.horizontal,
+                  //     children: [
+                  //       ItemSliderWidget(),
+                  //       ItemSliderWidget(),
+                  //       ItemSliderWidget(),
+                  //       ItemSliderWidget(),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
