@@ -47,11 +47,27 @@ class _HomePageState extends State<HomePage> {
   }
 
 
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Futures"),
+        actions: [
+          FutureBuilder(
+            future: getName(),
+            builder: (BuildContext context, AsyncSnapshot snap){
+              if(snap.hasData){
+                String _name = snap.data;
+                return Text(_name);
+              }
+              return CircularProgressIndicator();
+            },
+          ),
+        ],
       ),
       body: FutureBuilder(
         future: getData(),
