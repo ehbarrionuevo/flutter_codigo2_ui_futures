@@ -54,7 +54,8 @@ class InitPage extends StatelessWidget {
                         ),
                         TextField(
                           decoration: InputDecoration(
-                            contentPadding: const EdgeInsets.symmetric(horizontal: 14.0),
+                            contentPadding:
+                                const EdgeInsets.symmetric(horizontal: 14.0),
                             hintText: "Where aye you going?",
                             hintStyle: TextStyle(
                                 color: Colors.white.withOpacity(0.90),
@@ -78,30 +79,60 @@ class InitPage extends StatelessWidget {
                       ],
                     ),
                   ),
-
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(
-                      color: Colors.red,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 10.0,
+                      ),
+                      color: Colors.white.withOpacity(0.66),
                       child: Row(
                         children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text("Santorini, Greece",),
-                              Text("Recommendation",),
-                            ],
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "Santorini, Greece",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  "Recommendation",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 12.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.star,),
-                                  Icon(Icons.star,),
-                                  Icon(Icons.star,),
-                                  Icon(Icons.star,),
-                                  Icon(Icons.star,),
+                                  Icon(
+                                    Icons.star,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                  ),
+                                  Icon(
+                                    Icons.star,
+                                  ),
                                 ],
                               ),
                               Row(
