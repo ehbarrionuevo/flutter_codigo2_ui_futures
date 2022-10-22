@@ -56,10 +56,25 @@ class _HomePageState extends State<HomePage> {
       body: FutureBuilder(
         future: getData(),
         builder: (BuildContext context, AsyncSnapshot snapshot){
-          print(snapshot.hasData);
-          print(snapshot.connectionState);
-          print(snapshot.data);
-          return Text("Hola");
+          // print(snapshot.hasData);
+          // print(snapshot.connectionState);
+          // print(snapshot.data);
+
+          if(snapshot.hasData){
+            List<String> _names = snapshot.data;
+            return ListView.builder(
+              itemCount: _names.length,
+              itemBuilder: (BuildContext context, int index){
+                return ListTile(
+                  title: Text(_names[index]),
+                );
+              },
+            );
+          }
+
+          return const Center(child: CircularProgressIndicator());
+
+
         },
       ),
     );
