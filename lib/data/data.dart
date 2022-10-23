@@ -60,7 +60,7 @@ class Data{
 
 
   Future<List<Map<String, dynamic>>> fetchData() async{
-    return Future.delayed(const Duration(seconds: 2), (){
+    return Future.delayed(const Duration(seconds: 4), (){
       return _data;
     });
   }

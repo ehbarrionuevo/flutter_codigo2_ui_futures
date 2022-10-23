@@ -10,6 +10,7 @@ class InitPage extends StatefulWidget {
 }
 
 class _InitPageState extends State<InitPage> {
+  bool isLoading = true;
   Data data = Data();
   List<Map<String, dynamic>> listData = [];
 
@@ -23,6 +24,7 @@ class _InitPageState extends State<InitPage> {
 
   Future<void> initData() async {
     listData = await data.fetchData();
+    isLoading = false;
     setState(() {});
   }
 
@@ -31,7 +33,7 @@ class _InitPageState extends State<InitPage> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: SingleChildScrollView(
+      body: !isLoading ? SingleChildScrollView(
         child: Column(
           children: [
             Container(
@@ -215,6 +217,8 @@ class _InitPageState extends State<InitPage> {
                   const SizedBox(
                     height: 14.0,
                   ),
+
+
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
@@ -248,6 +252,8 @@ class _InitPageState extends State<InitPage> {
                           .toList(),
                     ),
                   ),
+
+
                   const SizedBox(
                     height: 14.0,
                   ),
@@ -307,6 +313,8 @@ class _InitPageState extends State<InitPage> {
             ),
           ],
         ),
+      ): Center(
+        child: CircularProgressIndicator(),
       ),
     );
   }
