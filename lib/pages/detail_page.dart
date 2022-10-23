@@ -195,6 +195,9 @@ class DetailPage extends StatelessWidget {
                           color: Colors.black54,
                         ),
                       ),
+                      SizedBox(
+                        height: 100,
+                      ),
                     ],
                   ),
                 ),
@@ -239,8 +242,21 @@ class DetailPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Book Now",
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      backgroundColor: Color(0xff2687F0),
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                      child: Text(
+                        "Book Now",
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                 ],
