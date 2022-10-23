@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailPage extends StatelessWidget {
   Map<String, dynamic> data;
@@ -258,7 +259,16 @@ class DetailPage extends StatelessWidget {
                     ],
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      prefs.setString("name", "Juan Manuel Lopez");
+                      prefs.setString("address", "Av. Lima 12323");
+                      prefs.setInt("matasquita", 1000);
+
+                      print("Guardado...");
+
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),

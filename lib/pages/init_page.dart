@@ -3,6 +3,7 @@ import 'package:codigo2_ui_future/pages/detail_page.dart';
 import 'package:codigo2_ui_future/widgets/item_category_widget.dart';
 import 'package:codigo2_ui_future/widgets/item_slider_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class InitPage extends StatefulWidget {
   @override
@@ -343,6 +344,21 @@ class _InitPageState extends State<InitPage> {
                   //   ),
                   // ),
                 ],
+              ),
+            ),
+
+            ElevatedButton(
+              onPressed: ()  async {
+
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                String name = prefs.getString("name") ?? "-";
+                int n = prefs.getInt("matasquita") ?? 0;
+                print(name);
+                print(n);
+
+              },
+              child: Text(
+                "Data",
               ),
             ),
           ],
