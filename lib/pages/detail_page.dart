@@ -130,6 +130,42 @@ class DetailPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                Row(
+                  children: [
+                    Row(
+                      children: List.generate(
+                        5,
+                        (index) => const Icon(
+                          Icons.star,
+                          color: Color(0xffFEAA36),
+                          size: 22.0,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 6.0,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "4.3",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          " (2323 reviews)",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 12.0,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  ],
+                ),
               ],
             ),
           ),
