@@ -1,13 +1,40 @@
+import 'package:codigo2_ui_future/data/data.dart';
 import 'package:codigo2_ui_future/pages/detail_page.dart';
 import 'package:codigo2_ui_future/widgets/item_category_widget.dart';
 import 'package:codigo2_ui_future/widgets/item_slider_widget.dart';
 import 'package:flutter/material.dart';
 
-class InitPage extends StatelessWidget {
-  const InitPage({Key? key}) : super(key: key);
+class InitPage extends StatefulWidget {
+  @override
+  State<InitPage> createState() => _InitPageState();
+}
+
+class _InitPageState extends State<InitPage> {
+
+  Data data = Data();
+  List<Map<String, dynamic>> listData = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    initData();
+
+  }
+
+  Future<void> initData() async {
+    listData = await data.fetchData();
+    setState(() {
+
+    });
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
+
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
