@@ -204,8 +204,20 @@ class DetailPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
-              color: Colors.red,
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.0)
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white,
+                    blurRadius: 40,
+                    offset: const Offset(0, -18),
+                  ),
+                ],
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
