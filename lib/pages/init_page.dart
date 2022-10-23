@@ -10,7 +10,6 @@ class InitPage extends StatefulWidget {
 }
 
 class _InitPageState extends State<InitPage> {
-
   Data data = Data();
   List<Map<String, dynamic>> listData = [];
 
@@ -20,21 +19,15 @@ class _InitPageState extends State<InitPage> {
     super.initState();
 
     initData();
-
   }
 
   Future<void> initData() async {
     listData = await data.fetchData();
-    setState(() {
-
-    });
+    setState(() {});
   }
-
-
 
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -227,24 +220,31 @@ class _InitPageState extends State<InitPage> {
                     physics: const BouncingScrollPhysics(),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        ItemSliderWidget(
-                          onMandarina: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPage()));
-                          },
-                        ),
-                        ItemSliderWidget(
-                          onMandarina: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPage()));
-                          },
-                        ),
-                        ItemSliderWidget(
-                          onMandarina: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPage()));
-                          },
-                        ),
-
-                      ],
+                      // children: List.generate(
+                      //   listData.length,
+                      //   (index) => ItemSliderWidget(
+                      //     onMandarina: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => DetailPage()));
+                      //     },
+                      //   ),
+                      // ),
+                      children: listData
+                          .map(
+                            (e) => ItemSliderWidget(
+                              onMandarina: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DetailPage(),
+                                  ),
+                                );
+                              },
+                            ),
+                          )
+                          .toList(),
                     ),
                   ),
                   const SizedBox(
