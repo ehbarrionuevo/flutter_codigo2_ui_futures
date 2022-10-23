@@ -33,7 +33,7 @@ class _InitPageState extends State<InitPage> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: !isLoading ? SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
@@ -218,7 +218,6 @@ class _InitPageState extends State<InitPage> {
                     height: 14.0,
                   ),
 
-
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
@@ -253,6 +252,37 @@ class _InitPageState extends State<InitPage> {
                     ),
                   ),
 
+                  FutureBuilder(
+                    future: data.fetchData(),
+                    builder: (BuildContext context, AsyncSnapshot snap) {
+                      if (snap.hasData) {
+                        List<Map<String, dynamic>> list = snap.data;
+                        return SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: list
+                                .map(
+                                  (matasquita) => ItemSliderWidget(
+                                    place: matasquita,
+                                    onMandarina: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => DetailPage(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        );
+                      }
+                      return CircularProgressIndicator();
+                    },
+                  ),
 
                   const SizedBox(
                     height: 14.0,
@@ -313,8 +343,6 @@ class _InitPageState extends State<InitPage> {
             ),
           ],
         ),
-      ): Center(
-        child: CircularProgressIndicator(),
       ),
     );
   }
