@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
 class ItemSliderWidget extends StatelessWidget {
-
   Function onMandarina;
+  Map<String, dynamic> place;
 
-  ItemSliderWidget({required this.onMandarina});
+  ItemSliderWidget({
+    required this.onMandarina,
+    required this.place,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(12),
       splashColor: Colors.black12,
-      onTap: (){
+      onTap: () {
         onMandarina();
       },
       child: Container(
         height: 140,
         width: 210,
-        margin: const EdgeInsets.only(
-          right: 12.0,
-          bottom: 10.0
-        ),
+        margin: const EdgeInsets.only(right: 12.0, bottom: 10.0),
         decoration: BoxDecoration(
           color: Colors.black12,
           borderRadius: BorderRadius.circular(12.0),

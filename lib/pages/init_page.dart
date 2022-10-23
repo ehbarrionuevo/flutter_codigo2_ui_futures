@@ -233,7 +233,8 @@ class _InitPageState extends State<InitPage> {
                       // ),
                       children: listData
                           .map(
-                            (e) => ItemSliderWidget(
+                            (matasquita) => ItemSliderWidget(
+                              place: matasquita,
                               onMandarina: () {
                                 Navigator.push(
                                   context,
