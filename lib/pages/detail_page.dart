@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
+
+  Map<String, dynamic> data;
+
+  DetailPage({required this.data,});
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-
     return Scaffold(
       body: Stack(
         children: [
@@ -15,14 +17,15 @@ class DetailPage extends StatelessWidget {
               children: [
                 Container(
                   height: height * 0.58,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.black12,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomRight: Radius.circular(42.0),
                     ),
                     image: DecorationImage(
                       image: NetworkImage(
-                          "https://images.pexels.com/photos/4215104/pexels-photo-4215104.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                         data["image"],
+                      ),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -56,7 +59,7 @@ class DetailPage extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Lorem ipsum",
+                                        data["place"],
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
@@ -80,7 +83,7 @@ class DetailPage extends StatelessWidget {
                                             width: 4.0,
                                           ),
                                           Text(
-                                            "Santorino, Greece",
+                                            "${data["place"]}, ${data["country"]}",
                                             style: TextStyle(
                                                 color: Colors.white70,
                                                 fontSize: 16.0),
@@ -142,7 +145,7 @@ class DetailPage extends StatelessWidget {
                         children: [
                           Row(
                             children: List.generate(
-                              5,
+                              data["rate"],
                               (index) => const Icon(
                                 Icons.star,
                                 color: Color(0xffFEAA36),
@@ -156,13 +159,13 @@ class DetailPage extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                "4.3",
+                                data["rate"].toString(),
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               Text(
-                                " (2323 reviews)",
+                                " (${data["reviews"]} reviews)",
                                 style: TextStyle(
                                   color: Colors.black54,
                                   fontSize: 12.0,
@@ -177,7 +180,7 @@ class DetailPage extends StatelessWidget {
                         height: 16.0,
                       ),
                       Text(
-                        "Lorem ipsum dolor sit amet",
+                        data["title"],
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.bold,
@@ -187,7 +190,7 @@ class DetailPage extends StatelessWidget {
                         height: 12.0,
                       ),
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        data["overview"],
                         style: TextStyle(
                           fontSize: 14.0,
                           height: 1.45,

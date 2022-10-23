@@ -236,13 +236,15 @@ class _InitPageState extends State<InitPage> {
                       // ),
                       children: listData
                           .map(
-                            (matasquita) => ItemSliderWidget(
-                              place: matasquita,
+                            (e) => ItemSliderWidget(
+                              place: e,
                               onMandarina: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => DetailPage(),
+                                    builder: (context) => DetailPage(
+                                      data: e,
+                                    ),
                                   ),
                                 );
                               },
@@ -270,7 +272,9 @@ class _InitPageState extends State<InitPage> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => DetailPage(),
+                                          builder: (context) => DetailPage(
+                                            data: matasquita,
+                                          ),
                                         ),
                                       );
                                     },
