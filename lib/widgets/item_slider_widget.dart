@@ -32,7 +32,7 @@ class ItemSliderWidget extends StatelessWidget {
           ],
           image: DecorationImage(
             image: NetworkImage(
-              "https://mymodernmet.com/wp/wp-content/uploads/2019/08/fanjingshan-buddhist-temples-china-7.jpg",
+              place["image"],
             ),
           ),
         ),
@@ -58,7 +58,7 @@ class ItemSliderWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Mount Fanjingshan",
+                    place["place"],
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -71,7 +71,7 @@ class ItemSliderWidget extends StatelessWidget {
                     height: 4.0,
                   ),
                   Text(
-                    "3.4 (2323 views)",
+                    "${place["rate"]} (${place["reviews"]} views)",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 12.0,
