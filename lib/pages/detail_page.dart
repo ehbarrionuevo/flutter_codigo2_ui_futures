@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
-
   Map<String, dynamic> data;
 
-  DetailPage({required this.data,});
+  DetailPage({
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class DetailPage extends StatelessWidget {
                     ),
                     image: DecorationImage(
                       image: NetworkImage(
-                         data["image"],
+                        data["image"],
                       ),
                       fit: BoxFit.cover,
                     ),
@@ -101,6 +102,20 @@ class DetailPage extends StatelessWidget {
                               ],
                             ),
                           ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 30,
+                        left: 10,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(
+                            Icons.chevron_left,
+                            color: Colors.white,
+                            size: 40,
+                          ),
                         ),
                       ),
                     ],
@@ -210,12 +225,11 @@ class DetailPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.0)
-                ),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0)),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.white,
@@ -231,8 +245,8 @@ class DetailPage extends StatelessWidget {
                     children: [
                       Text(
                         "\$453",
-                        style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 26.0),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 26.0),
                       ),
                       Text(
                         " (5 days)",
@@ -252,7 +266,8 @@ class DetailPage extends StatelessWidget {
                       backgroundColor: const Color(0xff2687F0),
                     ),
                     child: const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 10.0),
                       child: Text(
                         "Book Now",
                         style: TextStyle(
