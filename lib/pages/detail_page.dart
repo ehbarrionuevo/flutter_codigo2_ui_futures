@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
         children: [
           Container(
             height: height * 0.58,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black12,
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(42.0),
@@ -78,9 +78,8 @@ class DetailPage extends StatelessWidget {
                                     Text(
                                       "Santorino, Greece",
                                       style: TextStyle(
-                                        color: Colors.white70,
-                                        fontSize: 16.0
-                                      ),
+                                          color: Colors.white70,
+                                          fontSize: 16.0),
                                     ),
                                   ],
                                 ),
@@ -96,6 +95,40 @@ class DetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      "Overview",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "Gallery",
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black38),
+                    ),
+                    Text(
+                      "Reviews",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black38,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
