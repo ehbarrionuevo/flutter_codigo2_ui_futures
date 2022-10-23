@@ -52,7 +52,8 @@ class DetailPage extends StatelessWidget {
                               children: [
                                 Expanded(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "Lorem ipsum",
@@ -142,7 +143,7 @@ class DetailPage extends StatelessWidget {
                           Row(
                             children: List.generate(
                               5,
-                                  (index) => const Icon(
+                              (index) => const Icon(
                                 Icons.star,
                                 color: Color(0xffFEAA36),
                                 size: 22.0,
@@ -203,10 +204,33 @@ class DetailPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
               color: Colors.red,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("\$453")
+                  Row(
+                    children: [
+                      Text(
+                        "\$453",
+                        style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 26.0),
+                      ),
+                      Text(
+                        " (5 days)",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                            color: Colors.black54),
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Book Now",
+                    ),
+                  ),
                 ],
               ),
             ),
