@@ -1,3 +1,4 @@
+import 'package:codigo2_ui_future/pages/detail_page.dart';
 import 'package:codigo2_ui_future/widgets/item_category_widget.dart';
 import 'package:codigo2_ui_future/widgets/item_slider_widget.dart';
 import 'package:flutter/material.dart';
@@ -198,15 +199,24 @@ class InitPage extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     physics: const BouncingScrollPhysics(),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
-                        ItemSliderWidget(),
+                        ItemSliderWidget(
+                          onMandarina: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPage()));
+                          },
+                        ),
+                        ItemSliderWidget(
+                          onMandarina: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPage()));
+                          },
+                        ),
+                        ItemSliderWidget(
+                          onMandarina: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailPage()));
+                          },
+                        ),
+
                       ],
                     ),
                   ),
