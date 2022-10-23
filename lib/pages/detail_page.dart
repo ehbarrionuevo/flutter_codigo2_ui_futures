@@ -11,7 +11,7 @@ class DetailPage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: height * 0.56,
+            height: height * 0.58,
             decoration: BoxDecoration(
               color: Colors.black12,
               borderRadius: BorderRadius.only(
@@ -41,7 +41,7 @@ class DetailPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(26.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -53,20 +53,33 @@ class DetailPage extends StatelessWidget {
                               children: [
                                 Text(
                                   "Lorem ipsum",
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
+                                    height: 1.2,
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                   ),
+                                ),
+                                SizedBox(
+                                  height: 5.0,
                                 ),
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.location_on,
-                                      color: Colors.white,
+                                      color: Colors.white70,
+                                      size: 18.0,
+                                    ),
+                                    SizedBox(
+                                      width: 4.0,
                                     ),
                                     Text(
                                       "Santorino, Greece",
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.white70,
+                                        fontSize: 16.0
                                       ),
                                     ),
                                   ],
@@ -77,6 +90,7 @@ class DetailPage extends StatelessWidget {
                           Icon(
                             Icons.favorite_border,
                             color: Colors.white,
+                            size: 30,
                           ),
                         ],
                       ),
